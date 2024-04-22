@@ -3,16 +3,19 @@ import React from "react";
 import Vars from "./Vars";
 
 const Bird = ({ body }) => {
+  const width = body.bounds.max.x - body.bounds.min.x;
+  const height = body.bounds.max.y - body.bounds.min.y;
+  const x = body.position.x - width / 2;
+  const y = body.position.y - height / 2;
   return (
     <View
       style={{
         position: "absolute",
-        width: 50,
-        height: 50,
-
+        top: y,
+        left: x,
+        width: width,
+        height: height,
         backgroundColor: "black",
-        top: Vars.HEIGHT / 2,
-        left: Vars.WIDTH / 3,
       }}
     ></View>
   );

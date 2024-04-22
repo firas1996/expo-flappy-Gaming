@@ -5,6 +5,7 @@ import Matter from "matter-js";
 import { Component } from "react";
 import Bird from "./Bird";
 import Vars from "./Vars";
+import Physics from "./Physics";
 
 export default class App extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ export default class App extends Component {
             this.gameEngine = ref;
           }}
           entities={this.entities}
+          systems={[Physics]}
         ></GameEngine>
       </View>
     );
